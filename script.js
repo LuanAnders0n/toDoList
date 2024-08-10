@@ -15,9 +15,14 @@ function addTodoItem(text) {
   const itemText = document.createElement('span');
   itemText.textContent = text;
 
+  itemText.addEventListener('click', function () {
+    itemText.classList.toggle('completed');
+  });
+
   const editButton = document.createElement('button');
   editButton.textContent = 'Editar';
-  editButton.addEventListener('click', function () {
+  editButton.addEventListener('click', function (event) {
+    event.stopPropagation();
     const newText = prompt('Edite o item:', itemText.textContent);
     if (newText !== null && newText.trim() !== '') {
       itemText.textContent = newText.trim();
@@ -26,7 +31,8 @@ function addTodoItem(text) {
 
   const removeButton = document.createElement('button');
   removeButton.textContent = 'Remover';
-  removeButton.addEventListener('click', function () {
+  removeButton.addEventListener('click', function (event) {
+    event.stopPropagation();
     todoList.removeChild(listItem);
   });
 

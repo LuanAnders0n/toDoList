@@ -58,7 +58,9 @@ li {
   align-items: center;
   margin-bottom: 10px;
 }
-
+#add-button {
+  margin-top: 10px;
+}
 li button {
   background-color: #dc3545;
   color: white;
@@ -70,4 +72,8 @@ li button {
 
 li button:hover {
   background-color: #c82333;
+}
+.completed {
+  text-decoration: line-through;
+  color: #535151;
 }
